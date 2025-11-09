@@ -12,7 +12,7 @@ function App() {
       id: 1,
       title: "新しいノート",
       content: "新しいノートの内容",
-      modeNote: Date.now(),
+      modDate: Date.now(),
     };
     setNotes([...notes, newNote]);
     console.log(notes);
@@ -20,7 +20,7 @@ function App() {
   
   return (
     <div className="App">
-      <Sidebar onAddNote={onAddNote} />
+      <Sidebar onAddNote={onAddNote} notes={notes} />
       <Main />
     </div>
   )
