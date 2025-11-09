@@ -1,0 +1,9 @@
+services:
+  app:
+    build: .
+    volumes:
+      - ./noteapp-with-react:/noteapp-with-react
+    ports:
+      - 3000:3000
+    tty: true
+    stdin_open: true

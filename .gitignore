@@ -1,0 +1,22 @@
+# Logs
+noteapp-with-react/logs
+noteapp-with-react/*.log
+noteapp-with-react/npm-debug.log*
+noteapp-with-react/yarn-debug.log*
+noteapp-with-react/yarn-error.log*
+noteapp-with-react/pnpm-debug.log*
+noteapp-with-react/lerna-debug.log*
+
+noteapp-with-react/node_modules
+noteapp-with-react/dist
+noteapp-with-react/dist-ssr
+noteapp-with-react/*.local
+
+# Editor directories and files
+noteapp-with-react/.idea
+noteapp-with-react/.DS_Store
+noteapp-with-react/*.suo
+noteapp-with-react/*.ntvs*
+noteapp-with-react/*.njsproj
+noteapp-with-react/*.sln
+noteapp-with-react/*.sw?
