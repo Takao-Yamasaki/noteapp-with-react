@@ -7,6 +7,7 @@ import uuid from 'react-uuid'
 function App() {
   const [notes, setNotes] = useState([]);
 
+  // ノートを追加する関数
   const onAddNote = () => {
     console.log("新しくノートが追加されました");
     const newNote = {
@@ -19,9 +20,17 @@ function App() {
     console.log(notes);
   }
   
+  // ノートを削除する関数
+  const onDeleteNote = (id) => {
+    // 削除対象ノート以外をfilterNotesに格納
+    const filterNotes = notes.filter((note) => note.id !== id );
+    // 削除対象ノート以外をセットする
+    setNotes(filterNotes);
+  }
+  
   return (
     <div className="App">
-      <Sidebar onAddNote={onAddNote} notes={notes} />
+      <Sidebar onAddNote={onAddNote}  onDeleteNote={onDeleteNote} notes={notes} />
       <Main />
     </div>
   )
