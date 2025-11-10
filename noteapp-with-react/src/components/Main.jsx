@@ -1,5 +1,6 @@
 import React from 'react'
 import "./Main.css"
+import ReactMarkdown from "react-markdown"
 
 const Main = ({ activeNote, onUpdateNote }) => {  
   // ノートを編集する関数
@@ -32,7 +33,11 @@ const Main = ({ activeNote, onUpdateNote }) => {
       </div>
       <div className="app-main-note-preview">
         <h1 className="preview-title">{activeNote.title}</h1>
-        <div className="markdown-preview">{activeNote.content}</div>
+        <div className="markdown-preview">
+          <ReactMarkdown>
+            {activeNote.content ?? ""}
+          </ReactMarkdown>
+        </div>
       </div>
     </div>
   )
