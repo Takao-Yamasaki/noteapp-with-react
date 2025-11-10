@@ -2,6 +2,11 @@ import React from 'react'
 import "./Main.css"
 
 const Main = ({ activeNote }) => {  
+  // ノートを編集する関数
+  const OnEditNote = () => {
+    
+  }
+  
   if(!activeNote) {
     return <div className='no-active-note'>ノートが選択されていません</div>
   }
@@ -9,8 +14,16 @@ const Main = ({ activeNote }) => {
   return (
     <div className='app-main'>
       <div className="app-main-note-edit">
-        <input type="text" />
-        <textarea id="" placeholder='ノート内容を記入'></textarea>
+        <input 
+          id="title"
+          type="text" 
+          value={activeNote.title} 
+          onChange={(e) => onEditNote("title", e.target.value)} 
+        /><textarea 
+          id="content"
+          placeholder='ノート内容を記入' 
+          value={activeNote.content}
+        ></textarea>
       </div>
       <div className="app-main-note-preview">
         <h1 className="preview-title">{activeNote.title}</h1>
