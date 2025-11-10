@@ -13,6 +13,11 @@ function App() {
     localStorage.setItem("notes", JSON.stringify(notes));
   }, [notes]);
 
+  useEffect(() => {
+    //　ページを開くとノートの一番上が選択されている
+    setActiveNote(notes[0].id)
+  }, []);
+
   // ノートを追加する関数
   const onAddNote = () => {
     console.log("新しくノートが追加されました");
