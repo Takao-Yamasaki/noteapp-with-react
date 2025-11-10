@@ -1,10 +1,14 @@
 import React from 'react'
 import "./Main.css"
 
-const Main = ({ activeNote }) => {  
+const Main = ({ activeNote, onUpdateNote }) => {  
   // ノートを編集する関数
-  const OnEditNote = () => {
-    
+  const onEditNote = (key, value) => {
+    onUpdateNote({
+      ...activeNote,
+      [key]: value,
+      modDate: Date.now(),
+    });   
   }
   
   if(!activeNote) {
@@ -23,6 +27,7 @@ const Main = ({ activeNote }) => {
           id="content"
           placeholder='ノート内容を記入' 
           value={activeNote.content}
+          onChange={(e) => onEditNote("content", e.target.value)}
         ></textarea>
       </div>
       <div className="app-main-note-preview">
